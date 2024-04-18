@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+//go:generate stringer -type=ParameterType -linecomment
+
 package sdk
 
 import (
@@ -39,12 +41,12 @@ var (
 )
 
 const (
-	ParameterTypeString ParameterType = iota + 1
-	ParameterTypeInt
-	ParameterTypeFloat
-	ParameterTypeBool
-	ParameterTypeFile
-	ParameterTypeDuration
+	ParameterTypeString   ParameterType = iota + 1 // string
+	ParameterTypeInt                               // int
+	ParameterTypeFloat                             // float
+	ParameterTypeBool                              // bool
+	ParameterTypeFile                              // file
+	ParameterTypeDuration                          // duration
 )
 
 type ParameterType int
